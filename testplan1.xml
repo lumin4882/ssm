@@ -38,6 +38,7 @@
 	  <!--测试用例集 包含多个步骤-->
 				<TestCase type="http" >
 				   	<!--请求参数值通过 正则表达式进行替换-->
+				   	<testcasename>c测试步骤1</testcasename>
 				   <urlpath>http://toy1.weather.com.cn/search?cityname=${city}</urlpath>
 				   <!--get报文 HTTBody 为空-->
 				   <HTTPmethod>GET</HTTPmethod>
@@ -46,6 +47,7 @@
 				</TestCase>
 				<TestCase type="http" >
 				   	<!--请求参数值通过 正则表达式进行替换-->
+				   	   	<testcasename>c测试步骤2</testcasename>
 				   <urlpath> http://toy1.weather.com.cn/search?cityname=${city}</urlpath>
 				   <HTTPmethod>GET</HTTPmethod>
 				   <HTTBody></HTTBody>
@@ -56,6 +58,7 @@
 				</TestCase>
 				<TestCase type="http" >
 				   	<!--请求参数值通过 正则表达式进行替换-->
+				   	<testcasename>c测试步骤2</testcasename>
 				   <urlpath> http://toy1.weather.com.cn/search?cityname=${city}</urlpath>
 				   <HTTPmethod>GET</HTTPmethod>
 				   <HTTBody></HTTBody>

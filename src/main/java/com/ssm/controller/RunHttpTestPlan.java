@@ -45,10 +45,6 @@ public class RunHttpTestPlan extends Thread{
 		//获取测试计划作者
 		testplan.setCreaterName(xmlutils.readCreater());
 		System.out.println(testplan.getCreaterName());
-		
-		
-		
-		
 		//获取全局参数
 
 		testplan.setGlobalmap(xmlutils.readGlobalPrameter());
