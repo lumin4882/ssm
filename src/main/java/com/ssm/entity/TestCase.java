@@ -6,11 +6,20 @@ public class TestCase {
 	//测试步骤序号 只是当前测试用例集和序号
 	public int TestCaseID;
 	
+	//测试名称
+	public String TestCaseName;
+	
 	//测试步骤类型  0=报文头设置  1=http报文发送 
 	public int TestType;
 	//当测试步骤为设置报文头的时候 该值为报文头的键值对集合
 	public HashMap<String, String> HeadValueMap;
 	
+	public String getTestCaseName() {
+		return TestCaseName;
+	}
+	public void setTestCaseName(String testCaseName) {
+		TestCaseName = testCaseName;
+	}
 	//请求地址
 	public String HttpRequestUrlPath;
 	//请求方法 目前只支持 GET OR POST 

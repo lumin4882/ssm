@@ -71,6 +71,9 @@ public class RunHttpTestPlan extends Thread{
 			System.out.println("testcasecount ="+testcasecount);
 			while(currenttestcasenum<testcasecount) {
 				TestCase curenttestcase=curenttestcasesuit.TestCaseList.get(currenttestcasenum);
+				System.out.println("testcase name="+curenttestcase.getTestCaseName());
+				
+				
 				if(curenttestcase.getTestType()==0) {
 					
 					//打印报文头的键值对信息
@@ -126,16 +129,12 @@ public class RunHttpTestPlan extends Thread{
 			currentestcasesuitenum++;
 		}
 		
-		
-		
-		
-
-		
 		//获取HTTP报文返回结果
-		
-		
-		
 	}
-	
+	public static void main(String args[]) {
+		 RunHttpTestPlan  tt=		new RunHttpTestPlan();
+		  tt.start();
+
+	}
 
 }

@@ -249,6 +249,13 @@
 	    	 <version>4.5.9</version>
 		</dependency>
 		
+		<!-- EXCEL 操作包 -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>4.1.0</version>
+		</dependency>
+		
 	 </dependencies>
   <build>
     <finalName>ssm</finalName>

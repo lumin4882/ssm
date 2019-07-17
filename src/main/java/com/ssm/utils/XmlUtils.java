@@ -93,6 +93,13 @@ public class XmlUtils {
 				if(testcaseElement.attributeValue("type").equals("http")) {
 					testcase.setTestCaseID(testcasenum);
 					testcase.setTestType(1);
+					
+					Node testcasenamenode =testcaseElement.selectSingleNode("testcasename");
+					if(testcasenamenode!=null) {
+						testcase.setTestCaseName(testcasenamenode.getText());
+					}
+
+					
 					Node urlpathnode =testcaseElement.selectSingleNode("urlpath");
 					testcase.setHttpRequestUrlPath(urlpathnode.getText());
 					Node HTTPmethodnode =testcaseElement.selectSingleNode("HTTPmethod");
@@ -120,6 +127,14 @@ public class XmlUtils {
 				else if(testcaseElement.attributeValue("type").equals("httphead")){
 					testcase.setTestCaseID(testcasenum);
 					testcase.setTestType(0);
+					
+
+					Node testcasenamenode =testcaseElement.selectSingleNode("testcasename");
+					if(testcasenamenode!=null) {
+						testcase.setTestCaseName(testcasenamenode.getText());
+					}
+					
+					
 					HashMap<String, String>  HeadValueMap=new HashMap<>();
 					List HeadValuelist=testcaseElement.selectNodes("httphead/headelement");
 					Iterator iter3 = HeadValuelist.iterator();//报文头键值对集合迭代器

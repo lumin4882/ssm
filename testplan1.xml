@@ -19,6 +19,7 @@
 		   <!--测试步骤 分很多种 ，本人的设计概念是 所有的操作都是测试步骤，包括设置报文头、编译版本、判断结果等所有操作都是测试步骤 用testcase节点包,用type 区分不同的操作-->
 		   <!--下面就是设置报文头的操作-->
 	     <TestCase type="httphead">
+	      	<testcasename>报文头设置</testcasename>
 	      	<httphead name="HTTP Header报文头1">
 			 	 		<headelement>
 			 	 			<headername>Referer</headername>
@@ -38,7 +39,7 @@
 	  <!--测试用例集 包含多个步骤-->
 				<TestCase type="http" >
 				   	<!--请求参数值通过 正则表达式进行替换-->
-				   	<testcasename>c测试步骤1</testcasename>
+				   	<testcasename>测试步骤1</testcasename>
 				   <urlpath>http://toy1.weather.com.cn/search?cityname=${city}</urlpath>
 				   <!--get报文 HTTBody 为空-->
 				   <HTTPmethod>GET</HTTPmethod>
@@ -47,7 +48,7 @@
 				</TestCase>
 				<TestCase type="http" >
 				   	<!--请求参数值通过 正则表达式进行替换-->
-				   	   	<testcasename>c测试步骤2</testcasename>
+				   	   	<testcasename>测试步骤2</testcasename>
 				   <urlpath> http://toy1.weather.com.cn/search?cityname=${city}</urlpath>
 				   <HTTPmethod>GET</HTTPmethod>
 				   <HTTBody></HTTBody>
@@ -58,7 +59,7 @@
 				</TestCase>
 				<TestCase type="http" >
 				   	<!--请求参数值通过 正则表达式进行替换-->
-				   	<testcasename>c测试步骤2</testcasename>
+				   	<testcasename>测试步骤3</testcasename>
 				   <urlpath> http://toy1.weather.com.cn/search?cityname=${city}</urlpath>
 				   <HTTPmethod>GET</HTTPmethod>
 				   <HTTBody></HTTBody>

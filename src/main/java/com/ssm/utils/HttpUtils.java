@@ -161,7 +161,7 @@ public class HttpUtils  {
 				}
 			}
 			else {
-				System.out.println("http response  StatusCode check fail"+response.getStatusLine().getStatusCode());
+				System.out.println("http response  StatusCode not need check "+response.getStatusLine().getStatusCode());
 				
 			}
 
