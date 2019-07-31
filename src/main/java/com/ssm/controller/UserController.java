@@ -16,7 +16,8 @@ public class UserController {
 	
 	@Autowired
 	private UserMapper userMapper;
-
+  
+	// http://localhost:8083/user/test?id=1
 	// /user/test?id=1
 	@RequestMapping(value = "/user/test", method = RequestMethod.GET)
 	public String test(HttpServletRequest request, Model model) {
