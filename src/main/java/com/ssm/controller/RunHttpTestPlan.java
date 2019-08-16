@@ -7,18 +7,30 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.dom4j.DocumentException;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.ssm.dao.HttpTestResultMapper;
+import com.ssm.dao.UserMapper;
+import com.ssm.enmu.ResponseEnmu;
+import com.ssm.entity.HttpTestResult;
 import com.ssm.entity.TestCase;
 import com.ssm.entity.TestCaseSuite;
 import com.ssm.entity.TestPlan;
 import com.ssm.utils.HttpUtils;
 import com.ssm.utils.XmlUtils;
 
+
+@Controller
 public class RunHttpTestPlan extends Thread{
 	
 	public TestPlan  testplan;
@@ -131,10 +143,31 @@ public class RunHttpTestPlan extends Thread{
 		
 		//获取HTTP报文返回结果
 	}
+	/*
 	public static void main(String args[]) {
 		 RunHttpTestPlan  tt=		new RunHttpTestPlan();
 		  tt.start();
 
-	}
-
+	}*/
+	
+	@Autowired
+	private HttpTestResultMapper httpTestResultMapper ;
+	
+	// http://localhost:8084/gorun 
+	
+	@RequestMapping("/gorun")  
+    public void GoRun(HttpServletRequest request,HttpServletResponse response) throws IOException{  
+		RunHttpTestPlan  tt=		new RunHttpTestPlan();
+		 // tt.start(); 
+		  
+		  HttpTestResult httpTestResult=new HttpTestResult();
+		  httpTestResult.setResultContent("Test STEP content");
+		  httpTestResult.setResultTitle("Test STEP title");
+		  httpTestResult.setResultPassOrFail("PASS");
+		 int insertId= httpTestResultMapper.add(httpTestResult);
+		 System.out.println("插入"+insertId+"条数据" +"序号是"+httpTestResult.getId());
+		  response.getWriter().write(ResponseEnmu.TEST_PLAN_RUNING.getDesc());
+		  
+        return  ;  
+    }  
 }

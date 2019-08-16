@@ -135,7 +135,7 @@ public class XmlUtils {
 					}
 					
 					
-					HashMap<String, String>  HeadValueMap=new HashMap<>();
+					HashMap<String, String>  HeadValueMap=new HashMap<String, String>();
 					List HeadValuelist=testcaseElement.selectNodes("httphead/headelement");
 					Iterator iter3 = HeadValuelist.iterator();//报文头键值对集合迭代器
 					while (iter3.hasNext()) {

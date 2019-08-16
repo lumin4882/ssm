@@ -21,16 +21,16 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <!-- 默认的版本为3.8.1，修改为4.x,因为3.x使用的为编程的方式，4.x为注解的形式。 -->
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
     <!-- 导入java ee jar 包 -->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
-			<version>7.0</version>
+			<version>7.0</version> 
 		</dependency>
-		
 		<!--web-->
         <!--支持 Servlet-->
         <dependency>
@@ -255,7 +255,12 @@
 		    <artifactId>poi</artifactId>
 		    <version>4.1.0</version>
 		</dependency>
-		
+		<!-- 定时任务  -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.3.0</version>
+		</dependency>
 	 </dependencies>
   <build>
     <finalName>ssm</finalName>
@@ -266,10 +271,10 @@
                 <version>9.2.8.v20150217</version>
                 <configuration>
                     <httpConnector>
-                        <port>8083</port>
+                        <port>8084</port>
                     </httpConnector>
                     <stopKey>shutdown</stopKey>
-                    <stopPort>9966</stopPort>
+                    <stopPort>9961</stopPort>
                 </configuration>
        	</plugin>
      </plugins>

@@ -1,9 +1,17 @@
 package com.ssm.entity;
 
 public class HttpTestResult {
+	public int     id;
 	public String  ResultTitle;
 	public String  ResultContent;
 	public String  ResultPassOrFail;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getResultTitle() {
 		return ResultTitle;
 	}

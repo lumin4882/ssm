@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 对应的Mapper接口文件, ctrl+鼠标左键  可检验路径是否正确-->
+<mapper namespace="com.ssm.dao.HttpTestResultMapper">
+<!-- 对应的实体类   手动映射 -->
+    <resultMap id="httpTestResult" type="com.ssm.entity.HttpTestResult">
+		<id column="ID" jdbcType="INTEGER" property="id"/>
+		<result column="ResultTitle" jdbcType="VARCHAR" property="ResultTitle" />
+		<result column="ResultContent" jdbcType="VARCHAR" property="ResultContent" />
+		<result column="ResultPassOrFail" jdbcType="VARCHAR" property="ResultPassOrFail" />	
+	</resultMap>
+	<!-- 对应接口的方法 -->
+	<insert id="add" parameterType="com.ssm.entity.HttpTestResult" useGeneratedKeys="true" keyProperty="id" >
+		insert into httptestresult(ResultTitle,ResultContent,ResultPassOrFail)   
+		Values(#{ResultTitle},#{ResultContent},#{ResultPassOrFail}) 
+	</insert>
+	
+</mapper>

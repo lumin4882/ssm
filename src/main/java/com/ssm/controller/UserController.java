@@ -17,11 +17,11 @@ public class UserController {
 	@Autowired
 	private UserMapper userMapper;
   
-	// http://localhost:8083/user/test?id=1
+	// http://localhost:8084/user/test?id=1  启动要用  jetty:run
 	// /user/test?id=1
 	@RequestMapping(value = "/user/test", method = RequestMethod.GET)
 	public String test(HttpServletRequest request, Model model) {
-		int userId = Integer.parseInt(request.getParameter("id"));
+		int userId = Integer.parseInt(request.getParameter("id").trim());
 		System.out.println("userId ===:" + userId);
 		User user = null;
 		if (userId == 1) {
